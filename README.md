@@ -1,4 +1,5 @@
-# hackathon
+# LabelEase
+
 
 A new Flutter project.
 
