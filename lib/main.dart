@@ -15,8 +15,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
 
         textTheme: TextTheme(
-          bodyText1: TextStyle(fontSize: 17.0, fontFamily: "NotoSansKR"),
-          bodyText2: TextStyle(fontSize: 16.0, fontFamily: "NotoSansKR"),
+          bodyLarge: TextStyle(fontSize: 17.0, fontFamily: "NotoSansKR"),
+          bodyMedium: TextStyle(fontSize: 16.0, fontFamily: "NotoSansKR"),
+          bodySmall: TextStyle(fontSize: 14.0, fontFamily: "NotoSansKR"),
         ),
 
         primarySwatch: Colors.blue,
