@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'main.dart';
-import 'project_service.dart';
+import '../main.dart';
+import '../service/project_service.dart';
 
 class ProjectViewPage extends StatefulWidget {
   const ProjectViewPage({super.key});
@@ -154,83 +154,91 @@ class _ProjectViewPageState extends State<ProjectViewPage> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   insetPadding: const EdgeInsets.symmetric(
-                                      vertical: 250, horizontal: 0),
-                                  actions: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Text(name),
-                                          ],
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            const Text(
-                                              "분량",
-                                              style:
-                                                  TextStyle(color: Colors.grey),
-                                            ),
-                                            Text(" 사진 $count장  "),
-                                            const Text(
-                                              "분야 ",
-                                              style:
-                                                  TextStyle(color: Colors.grey),
-                                            ),
-                                          ],
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            SizedBox(
-                                              width: 120,
-                                              height: 40,
-                                              child: ElevatedButton(
-                                                style: ElevatedButton.styleFrom(
-                                                    backgroundColor:
-                                                        Colors.white,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              15),
-                                                      side: BorderSide(
-                                                          width: 1,
-                                                          color: Theme.of(
-                                                                  context)
-                                                              .primaryColor),
-                                                    )),
-                                                onPressed: () {
-                                                  Navigator.of(context).pop();
-                                                },
-                                                child: Text('시작하기',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .displaySmall),
+                                      vertical: 275, horizontal: 0),
+                                  content: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        name,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .displayMedium,
+                                      ),
+                                      const SizedBox(height: 23),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Image.asset(
+                                            'assets/won.png',
+                                            color: (reward < 50)
+                                                ? const Color(0xFFB48D61)
+                                                : (reward < 1000)
+                                                    ? const Color(0xFFD7D7D7)
+                                                    : const Color(0xFFECC53A),
+                                          ),
+                                          const SizedBox(width: 10),
+                                          Text(
+                                            "$reward",
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .displayMedium,
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(height: 15),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          const Text(
+                                            "분량",
+                                            style:
+                                                TextStyle(color: Colors.grey),
+                                          ),
+                                          Text(" 사진 $count장  "),
+                                          const Text(
+                                            "유형 ",
+                                            style:
+                                                TextStyle(color: Colors.grey),
+                                          ),
+                                          Text(annotation),
+                                        ],
+                                      ),
+                                      const SizedBox(height: 15),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          SizedBox(
+                                            width: 120,
+                                            height: 40,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                  backgroundColor: Colors.white,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15),
+                                                    side: BorderSide(
+                                                        width: 1,
+                                                        color: Theme.of(context)
+                                                            .primaryColor),
+                                                  )),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: Text(
+                                                '시작하기',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .displaySmall,
                                               ),
                                             ),
-                                          ],
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                  content: Column(
-                                    children: const [
-                                      //Text(name),
-                                      //const SizedBox(height: 20),
-                                      // ClipRRect(
-                                      //   borderRadius: BorderRadius.circular(20),
-                                      //   child: Image.network(
-                                      //     image,
-                                      //     height: 300,
-                                      //     fit: BoxFit.cover,
-                                      //   ),
-                                      // ),
-                                      //const SizedBox(height: 15),
+                                          ),
+                                        ],
+                                      ),
                                     ],
                                   ),
                                 );

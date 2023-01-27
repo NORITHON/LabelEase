@@ -1,11 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:hackathon/project_view_page.dart';
 import 'package:provider/provider.dart';
 
-import 'auth_service.dart';
+import 'service/auth_service.dart';
 import 'firebase_options.dart';
-import 'project_service.dart';
+import 'page/home_page.dart';
+import 'service/project_service.dart';
 
 final AuthService authService = AuthService();
 
@@ -14,6 +14,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  authService.signIn(email: 'admin@handong.ac.kr', password: '123456');
   runApp(
     ChangeNotifierProvider(
       create: (context) => ProjectService(),
@@ -22,9 +23,14 @@ void main() async {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -35,15 +41,15 @@ class MyApp extends StatelessWidget {
           bodySmall: TextStyle(
               fontSize: 14.0,
               fontFamily: "Pretendard-Regular",
-              color: Color(0xFF9E9E9E)),
+              color: Color(0xFFD7D7D7)),
           bodyMedium: TextStyle(
               fontSize: 20.0,
               fontFamily: "Pretendard-Medium",
-              color: Color(0xFF9E9E9E)),
+              color: Color(0xFFD7D7D7)),
           bodyLarge: TextStyle(
               fontSize: 22.0,
               fontFamily: "Pretendard-Bold",
-              color: Color(0xFF9E9E9E)),
+              color: Color(0xFFD7D7D7)),
           displaySmall: TextStyle(
               fontSize: 14.0,
               fontFamily: "NanumSquareNeo-aLt",
@@ -57,9 +63,10 @@ class MyApp extends StatelessWidget {
               fontFamily: "NanumSquareNeo-eHv",
               color: Colors.black),
         ),
-        primaryColor: const Color(0xFF6d3dd2),
+        primarySwatch: Colors.blue,
+        primaryColor: const Color(0xFF6D3DD2),
       ),
-      home: const ProjectViewPage(),
+      home: const HomePage(),
     );
   }
 }
