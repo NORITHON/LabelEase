@@ -110,17 +110,18 @@ class _HomeBodyState extends State<HomeBody> {
                       ),
                       onPressed: () {},
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: const [
                           Text(
                             '돈 벌러가기',
                             style: TextStyle(
-                              fontSize: 25,
+                              fontSize: 22,
                               fontFamily: "NanumSquareNeo-cBd",
                             ),
                           ),
                           Icon(
                             Icons.keyboard_arrow_right_rounded,
-                            size: 31,
+                            size: 35,
                           ),
                         ],
                       ),
