@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon/project_service.dart';
@@ -6,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import 'auth_service.dart';
 import 'firebase_options.dart';
+import 'project_view_page.dart';
 
 final AuthService authService = AuthService();
 
@@ -38,84 +38,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    authService.signIn;
-    return Scaffold(
-      body: Center(
-        child: Consumer<ProjectService>(builder: (context, projectService, _) {
-          return FutureBuilder<QuerySnapshot>(
-              future: projectService.read(),
-              builder: (context, snapshot) {
-                final docs = snapshot.data?.docs ?? [];
-                return ListView.builder(
-                  itemCount: docs.length,
-                  itemBuilder: (context, index) {
-                    final doc = docs[index];
-                    String name = doc.get('name');
-                    String field = doc.get('field');
-                    String annotation = doc.get('annotation');
-                    int count = doc.get('count');
-                    int reward = doc.get('reward');
-                    return ListTile(
-                      title: Text(name),
-                      subtitle: Row(
-                        children: [
-                          Text("$reward"),
-                          Text(annotation),
-                        ],
-                      ),
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) {
-                            return AlertDialog(
-                              insetPadding:
-                                  const EdgeInsets.fromLTRB(0, 80, 0, 80),
-                              actions: [
-                                Row(
-                                  children: [
-                                    Expanded(
-                                      child: ElevatedButton(
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: const Text('시작'),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                              content: Column(
-                                children: [
-                                  Text(name),
-                                  Text("$count"),
-                                  Text(field),
-                                ],
-                              ),
-                            );
-                          },
-                        );
-                      },
-                    );
-                  },
-                );
-              });
-        }),
-      ),
+      home: const ProjectViewPage(),
     );
   }
 }
