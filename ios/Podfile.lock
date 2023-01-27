@@ -856,7 +856,7 @@ PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
   FirebaseCoreExtension: 93d252fabdc9696bf14a73b04d84877ab9b3a832
   FirebaseCoreInternal: 29b76f784d607df8b2a1259d73c3f04f1210137b
   FirebaseDynamicLinks: 51c81d07bd63155bb56d76b0abdda79c8a3d8d02
-  FirebaseFirestore: f16ed5e8e5b024eff4928bc33605df9526bda650
+  FirebaseFirestore: ef5e47e1489c03dc978f94e8b43ad5f67a77df8c
   FirebaseStorage: 0efbff0ac978981866d89804191688ae50d64033
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   GoogleUtilities: c2bdc4cf2ce786c4d2e6b3bcfd599a25ca78f06f
