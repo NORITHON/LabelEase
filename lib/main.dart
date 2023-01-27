@@ -16,9 +16,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
 
         textTheme: TextTheme(
-          bodyLarge: TextStyle(fontSize: 17.0, fontFamily: "NotoSansKR"),
-          bodyMedium: TextStyle(fontSize: 16.0, fontFamily: "NotoSansKR"),
-          bodySmall: TextStyle(fontSize: 14.0, fontFamily: "NotoSansKR"),
+          titleLarge: TextStyle(fontSize: 34.0, fontFamily: "NanumSquareNeo"),
+          titleMedium: TextStyle(fontSize: 28.0, fontFamily: "NanumSquareNeo"),
+          titleSmall: TextStyle(fontSize: 22.0, fontFamily: "NanumSquareNeo"),
+          subtitle1: TextStyle(fontSize: 20.0, fontFamily: "NanumSquareNeo"),,
+          bodyLarge: TextStyle(fontSize: 17.0, fontFamily: "Pretendard"),
+          bodyMedium: TextStyle(fontSize: 16.0, fontFamily: "Pretendard"),
+          bodySmall: TextStyle(fontSize: 14.0, fontFamily: "Pretendard"),
+          labelMedium: TextStyle(fontSize: 12.0, fontFamily: "Pretendard"),
+          labelSmall: TextStyle(fontSize: 10.0, fontFamily: "Pretendard"),
         ),
 
         primarySwatch: Colors.blue,
