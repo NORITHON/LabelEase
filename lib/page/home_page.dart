@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hackathon/project_view_page.dart';
+import 'package:hackathon/page/project_view_page.dart';
+
+import 'community_page.dart';
+import 'profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,6 +16,8 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _widgetOptions = <Widget>[
     const HomeBody(),
     const ProjectViewPage(),
+    const CommunityPage(),
+    const ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
@@ -79,14 +84,17 @@ class _HomeBodyState extends State<HomeBody> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'LabelEase',
-                    style: Theme.of(context).textTheme.displayMedium,
+                  Image.asset(
+                    'assets/logo.png',
+                    width: 90,
                   ),
                   const SizedBox(height: 42),
-                  Text(
+                  const Text(
                     "오늘도 부자되는 하루\n시작해볼까요?",
-                    style: Theme.of(context).textTheme.displayMedium,
+                    style: TextStyle(
+                      fontSize: 28,
+                      color: Colors.black,
+                    ),
                   ),
                   const SizedBox(height: 20),
                   SizedBox(

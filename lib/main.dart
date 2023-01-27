@@ -2,10 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'auth_service.dart';
+import 'service/auth_service.dart';
 import 'firebase_options.dart';
-import 'home_page.dart';
-import 'project_service.dart';
+import 'page/home_page.dart';
+import 'service/project_service.dart';
 
 final AuthService authService = AuthService();
 
@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
               fontFamily: "NanumSquareNeo-aLt",
               color: Colors.black),
           displayMedium: TextStyle(
-              fontSize: 28.0,
+              fontSize: 20.0,
               fontFamily: "NanumSquareNeo-cBd",
               color: Colors.black),
           displayLarge: TextStyle(
