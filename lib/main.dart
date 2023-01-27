@@ -41,15 +41,15 @@ class _MyAppState extends State<MyApp> {
           bodySmall: TextStyle(
               fontSize: 14.0,
               fontFamily: "Pretendard-Regular",
-              color: Color(0xFFD7D7D7)),
+              color: Color(0xFF9E9E9E)),
           bodyMedium: TextStyle(
               fontSize: 20.0,
               fontFamily: "Pretendard-Medium",
-              color: Color(0xFFD7D7D7)),
+              color: Color(0xFF9E9E9E)),
           bodyLarge: TextStyle(
               fontSize: 22.0,
               fontFamily: "Pretendard-Bold",
-              color: Color(0xFFD7D7D7)),
+              color: Color(0xFF9E9E9E)),
           displaySmall: TextStyle(
               fontSize: 14.0,
               fontFamily: "NanumSquareNeo-aLt",

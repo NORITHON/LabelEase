@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:hackathon/page/bounding_page.dart';
 import 'package:provider/provider.dart';
 
 import '../main.dart';
@@ -228,6 +229,14 @@ class _ProjectViewPageState extends State<ProjectViewPage> {
                                                   )),
                                               onPressed: () {
                                                 Navigator.of(context).pop();
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        BoundingPage(
+                                                            projectId: doc.id),
+                                                  ),
+                                                );
                                               },
                                               child: Text(
                                                 '시작하기',

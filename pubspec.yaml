@@ -42,8 +42,6 @@ dependencies:
   provider: ^6.0.5
   firebase_ui_auth: ^1.1.9
   firebase_storage: ^11.0.10
-  image_size_getter: ^2.1.2
-  image_size_getter_http_input: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -79,6 +77,7 @@ flutter:
     - assets/Group41.png
     - assets/Group43.png
     - assets/logo.png
+    - assets/caution.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

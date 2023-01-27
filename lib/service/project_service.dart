@@ -8,6 +8,10 @@ class ProjectService extends ChangeNotifier {
     return projectCollection.get();
   }
 
+  Future<QuerySnapshot> readImage(String projectId) async {
+    return projectCollection.doc(projectId).collection('images').get();
+  }
+
   void update(String projectId, String imageId, bool isSolved) async {
     projectCollection.doc(projectId).collection('images').doc(imageId);
     notifyListeners();

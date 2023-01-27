@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
     const ProfilePage(),
   ];
 
-  void _onItemTapped(int index) {
+  void onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Theme.of(context).primaryColor,
-        onTap: _onItemTapped,
+        onTap: onItemTapped,
         unselectedItemColor: Colors.grey,
         type: BottomNavigationBarType.fixed,
       ),
