@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '369651907504',
     projectId: 'hackathon-fee8f',
     storageBucket: 'hackathon-fee8f.appspot.com',
-    iosClientId: '369651907504-pcgfrhkphoqftichedl66g4fhbtp5vaf.apps.googleusercontent.com',
+    iosClientId:
+        '369651907504-pcgfrhkphoqftichedl66g4fhbtp5vaf.apps.googleusercontent.com',
     iosBundleId: 'com.example.hackathon',
   );
 }
