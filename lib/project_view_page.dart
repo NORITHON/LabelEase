@@ -40,11 +40,9 @@ class _ProjectViewPageState extends State<ProjectViewPage> {
                   itemBuilder: (context, index) {
                     final doc = docs[index];
                     String name = doc.get('name');
-                    String field = doc.get('field');
                     String annotation = doc.get('annotation');
                     int count = doc.get('count');
                     int reward = doc.get('reward');
-                    String image = doc.get('image');
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Container(
@@ -182,7 +180,6 @@ class _ProjectViewPageState extends State<ProjectViewPage> {
                                               style:
                                                   TextStyle(color: Colors.grey),
                                             ),
-                                            Text(field),
                                           ],
                                         ),
                                         Row(
