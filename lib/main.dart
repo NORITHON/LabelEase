@@ -1,11 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:hackathon/project_service.dart';
 import 'package:provider/provider.dart';
 
 import 'auth_service.dart';
 import 'firebase_options.dart';
-import 'project_view_page.dart';
+import 'home_page.dart';
+import 'project_service.dart';
 
 final AuthService authService = AuthService();
 
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: const ProjectViewPage(),
+      home: const HomePage(),
     );
   }
 }
