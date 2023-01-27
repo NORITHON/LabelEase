@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'main.dart';
 import 'project_service.dart';
 
 class ProjectViewPage extends StatefulWidget {
@@ -15,7 +14,6 @@ class ProjectViewPage extends StatefulWidget {
 class _ProjectViewPageState extends State<ProjectViewPage> {
   @override
   Widget build(BuildContext context) {
-    authService.signIn;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(

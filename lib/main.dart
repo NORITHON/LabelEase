@@ -14,6 +14,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  authService.signIn(email: 'admin@handong.ac.kr', password: '123456');
   runApp(
     ChangeNotifierProvider(
       create: (context) => ProjectService(),
@@ -22,9 +23,14 @@ void main() async {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -32,11 +38,33 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         textTheme: const TextTheme(
-          bodyLarge: TextStyle(fontSize: 17.0, fontFamily: "NotoSansKR"),
-          bodyMedium: TextStyle(fontSize: 16.0, fontFamily: "NotoSansKR"),
-          bodySmall: TextStyle(fontSize: 14.0, fontFamily: "NotoSansKR"),
+          bodySmall: TextStyle(
+              fontSize: 14.0,
+              fontFamily: "Pretendard-Regular",
+              color: Color(0xFFD7D7D7)),
+          bodyMedium: TextStyle(
+              fontSize: 20.0,
+              fontFamily: "Pretendard-Medium",
+              color: Color(0xFFD7D7D7)),
+          bodyLarge: TextStyle(
+              fontSize: 22.0,
+              fontFamily: "Pretendard-Bold",
+              color: Color(0xFFD7D7D7)),
+          displaySmall: TextStyle(
+              fontSize: 14.0,
+              fontFamily: "NanumSquareNeo-aLt",
+              color: Colors.black),
+          displayMedium: TextStyle(
+              fontSize: 28.0,
+              fontFamily: "NanumSquareNeo-cBd",
+              color: Colors.black),
+          displayLarge: TextStyle(
+              fontSize: 22.0,
+              fontFamily: "NanumSquareNeo-eHv",
+              color: Colors.black),
         ),
         primarySwatch: Colors.blue,
+        primaryColor: const Color(0xFF6D3DD2),
       ),
       home: const HomePage(),
     );
