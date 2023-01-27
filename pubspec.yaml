@@ -78,6 +78,12 @@ flutter:
     - assets/Group43.png
     - assets/logo.png
     - assets/caution.png
+    - assets/Frame46.png
+    - assets/thumb.png
+    - assets/view.png
+    - assets/chat.png
+    - assets/plus.png
+    - assets/Group 55.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
@@ -93,15 +99,16 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: EliceDigitalBaeum
-      fonts:
-        - asset: assets/EliceDigitalBaeumOTF_Regular.otf
     - family: NanumSquareNeo
       fonts:
-        - asset: assets/NanumSquareNeoOTF-bRg.otf
-    - family: NotoSansKR
+        - asset: assets/NanumSquareNeo-cBd.ttf
+        - asset: assets/NanumSquareNeo-aLt.ttf
+        - asset: assets/NanumSquareNeo-eHv.ttf
+    - family: Pretendard
       fonts:
-        - asset: assets/NotoSansKR-Regular.otf
+        - asset: assets/Pretendard-Bold.otf
+        - asset: assets/Pretendard-Medium.otf
+        - asset: assets/Pretendard-Regular.otf
 
   #
   # For details regarding fonts from package dependencies,

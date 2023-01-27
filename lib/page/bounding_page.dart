@@ -74,7 +74,7 @@ class _BoundingState extends State<BoundingPage> {
     );
 
     return Scaffold(
-      backgroundColor: const Color(0xFFD7D7D7),
+      backgroundColor: const Color(0xFFF4F7FC),
       appBar: AppBar(
         elevation: 0,
         leading: IconButton(
@@ -167,7 +167,7 @@ class _BoundingState extends State<BoundingPage> {
         children: [
           Center(
             child: Container(
-              color: const Color(0xFFD7D7D7),
+              color: const Color(0xFFF4F7FC),
               width: MediaQuery.of(context).size.width,
               height: (MediaQuery.of(context).size.height) * 3 / 5,
               alignment: Alignment.center,

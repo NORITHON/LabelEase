@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _widgetOptions.elementAt(_selectedIndex),
-      backgroundColor: const Color(0xFFD7D7D7),
+      backgroundColor: const Color(0xFFF4F7FC),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           const BottomNavigationBarItem(
@@ -114,13 +114,13 @@ class _HomeBodyState extends State<HomeBody> {
                           Text(
                             '돈 벌러가기',
                             style: TextStyle(
-                              fontSize: 25,
+                              fontSize: 24,
                               fontFamily: "NanumSquareNeo-cBd",
                             ),
                           ),
                           Icon(
                             Icons.keyboard_arrow_right_rounded,
-                            size: 31,
+                            size: 35,
                           ),
                         ],
                       ),
