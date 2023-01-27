@@ -150,7 +150,7 @@ class CommunityItem extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: Theme.of(context).textTheme.displayLarge,
+                  style: Theme.of(context).textTheme.displayMedium,
                 ),
               ],
             ),
@@ -243,7 +243,7 @@ class CommunityItem2 extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: Theme.of(context).textTheme.displayLarge,
+                  style: Theme.of(context).textTheme.displayMedium,
                 ),
               ],
             ),
