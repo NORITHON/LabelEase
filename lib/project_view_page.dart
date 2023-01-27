@@ -49,7 +49,7 @@ class _ProjectViewPageState extends State<ProjectViewPage> {
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Container(
                         width: 340,
-                        height: 90,
+                        height: 100,
                         margin: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -113,11 +113,36 @@ class _ProjectViewPageState extends State<ProjectViewPage> {
                                   ],
                                 ),
                                 Row(
-                                  children: [ Text(name,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .displayMedium),
-                                      ],],
+                                  children: [
+                                    (reward < 50)
+                                        ? const Text(
+                                            '전체 중 20% 완료',
+                                            style: TextStyle(
+                                              fontSize: 11,
+                                              fontFamily: "NanumSquareNeo-aLt",
+                                              color: Color(0xFF9E9E9E),
+                                            ),
+                                          )
+                                        : (reward < 1000)
+                                            ? const Text(
+                                                '전체 중 40% 완료',
+                                                style: TextStyle(
+                                                  fontSize: 11,
+                                                  fontFamily:
+                                                      "NanumSquareNeo-aLt",
+                                                  color: Color(0xFF9E9E9E),
+                                                ),
+                                              )
+                                            : const Text(
+                                                '전체 중 87% 완료',
+                                                style: TextStyle(
+                                                  fontSize: 11,
+                                                  fontFamily:
+                                                      "NanumSquareNeo-aLt",
+                                                  color: Color(0xFF9E9E9E),
+                                                ),
+                                              ),
+                                  ],
                                 )
                               ],
                             ),
@@ -131,56 +156,84 @@ class _ProjectViewPageState extends State<ProjectViewPage> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   insetPadding: const EdgeInsets.symmetric(
-                                      vertical: 40, horizontal: 24),
+                                      vertical: 250, horizontal: 0),
                                   actions: [
-                                    Row(
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Expanded(
-                                          child: ElevatedButton(
-                                            style: ElevatedButton.styleFrom(
-                                              backgroundColor: Theme.of(context)
-                                                  .primaryColor,
+                                        Row(
+                                          children: [
+                                            Text(name),
+                                          ],
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            const Text(
+                                              "분량",
+                                              style:
+                                                  TextStyle(color: Colors.grey),
                                             ),
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                            child: const Text('시작하기'),
-                                          ),
+                                            Text(" 사진 $count장  "),
+                                            const Text(
+                                              "분야 ",
+                                              style:
+                                                  TextStyle(color: Colors.grey),
+                                            ),
+                                            Text(field),
+                                          ],
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            SizedBox(
+                                              width: 120,
+                                              height: 40,
+                                              child: ElevatedButton(
+                                                style: ElevatedButton.styleFrom(
+                                                    backgroundColor:
+                                                        Colors.white,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              15),
+                                                      side: BorderSide(
+                                                          width: 1,
+                                                          color: Theme.of(
+                                                                  context)
+                                                              .primaryColor),
+                                                    )),
+                                                onPressed: () {
+                                                  Navigator.of(context).pop();
+                                                },
+                                                child: Text('시작하기',
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .displaySmall),
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ],
-                                    ),
+                                    )
                                   ],
                                   content: Column(
-                                    children: [
-                                      Text(name),
-                                      const SizedBox(height: 20),
-                                      ClipRRect(
-                                        borderRadius: BorderRadius.circular(20),
-                                        child: Image.network(
-                                          image,
-                                          height: 300,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                      const SizedBox(height: 15),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          const Text(
-                                            "분량",
-                                            style:
-                                                TextStyle(color: Colors.grey),
-                                          ),
-                                          Text(" 사진 $count장  "),
-                                          const Text(
-                                            "분야 ",
-                                            style:
-                                                TextStyle(color: Colors.grey),
-                                          ),
-                                          Text(field),
-                                        ],
-                                      ),
+                                    children: const [
+                                      //Text(name),
+                                      //const SizedBox(height: 20),
+                                      // ClipRRect(
+                                      //   borderRadius: BorderRadius.circular(20),
+                                      //   child: Image.network(
+                                      //     image,
+                                      //     height: 300,
+                                      //     fit: BoxFit.cover,
+                                      //   ),
+                                      // ),
+                                      //const SizedBox(height: 15),
                                     ],
                                   ),
                                 );
@@ -189,7 +242,7 @@ class _ProjectViewPageState extends State<ProjectViewPage> {
                           },
                         ),
                       ),
-                    )
+                    );
                   },
                 );
               },
